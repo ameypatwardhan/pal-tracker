@@ -6,9 +6,6 @@ env:
   - RELEASE_TAG="release-$TRAVIS_BUILD_NUMBER"
 if: tag IS blank
 
-before_install:
-  - chmod +x gradlew
-
 jobs:
   include:
     - stage: build and publish
@@ -55,4 +52,3 @@ jobs:
         password: $CF_PASSWORD
         organization: $CF_ORG
         space: $CF_SPACE
-
